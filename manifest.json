@@ -1,8 +1,9 @@
 {
     "bundles": {
-        "Ferror\\Bundle\\SymfonyPackage": ["all"]
+        "Ferror\\Bundle\\PHPQuery": ["all"]
     },
     "copy-from-recipe": {
+        "bin/": "%BIN_DIR%/",
         "config/": "%CONFIG_DIR%/"
     }
 }

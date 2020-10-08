@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+
+<?php
+
+use Symfony\Component\Console\Output\ConsoleOutput;
+
+require __DIR__ . '/../vendor/autoload.php';
+
+$callback = include __DIR__ . '/../config/packages/phpquery.php';
+$config = new \Ferror\Bundle\PHPQuery\Configuration();
+$callback($config);
+
+$files = scandir(__DIR__ . '/../../playground/src/' . $config->getNamespace()->map());
+$files = array_filter($files, static function ($file) {
+    return !in_array($file, ['.', '..']);
+});
+
+$application = new \Ferror\Bundle\PHPQuery\Application(
+    $config->getConnection(),
+    $config->getNamespace(),
+    $files,
+    new ConsoleOutput
+);
+$application->run();

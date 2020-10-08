@@ -1,28 +1,25 @@
 {
-    "name": "ferror/SymfonyBundle",
+    "name": "ferror/phpquery",
     "license": "MIT",
     "description": "",
     "type": "symfony-bundle",
     "autoload" : {
         "psr-4" : {
-            "Ferror\\Bundle\\SymfonyBundle\\" : "src/"
+            "Ferror\\Bundle\\PHPQuery\\" : "src/"
         }
     },
     "autoload-dev" : {
         "psr-4" : {
-            "Ferror\\Bundle\\SymfonyBundle\\" : "tests/"
+            "Ferror\\Bundle\\PHPQuery\\" : "tests/"
         }
     },
     "require": {
-        "php": "^7.1.2"
+        "php": "^7.3",
+        "doctrine/dbal": "^2.10",
+        "symfony/console": "^5.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.5"
-    },
-    "scripts": {
-        "test": [
-            "@phpunit"
-        ],
-        "phpunit": "./vendor/bin/phpunit tests --colors=always"
+        "phpunit/phpunit": "^9.4",
+        "symfony/var-dumper": "^5.1"
     }
 }
